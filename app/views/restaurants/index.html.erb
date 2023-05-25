@@ -1,0 +1,10 @@
+<h1 class= "text-center py-2">Restaurants#index</h1>
+<div>
+  <ul class="list-group py-3">
+  <% @restaurants.each do |restaurant| %>
+    <li class="list-group-item my-0"><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to "Create Restaurant", new_restaurant_path, class: "btn btn-primary" %>

@@ -1,0 +1,16 @@
+<h1><%= @restaurant.name %></h1>
+<h3>Phone Number</h3>
+<p><%= @restaurant.phone_number %></p>
+<h3>Category</h3>
+<p><%= @restaurant.category %></p>
+<h3>Address</h3>
+<p><%= @restaurant.address %></p>
+<h3>Reviews</h3>
+<ul class="list-group py-3">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item my-0"><%= review.content %></li>
+  <% end %>
+  </ul>
+
+<%= link_to "Back", restaurants_path, class: "btn btn-success" %>
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
